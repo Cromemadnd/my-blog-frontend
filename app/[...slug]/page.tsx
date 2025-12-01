@@ -1,5 +1,4 @@
-import { getPost, getAllPosts } from "@/lib/posts"
-import { notFound } from "next/navigation"
+import { getAllPosts } from "@/lib/posts"
 import { PageContent } from "@/components/page-content"
 
 interface PageProps {
@@ -17,12 +16,9 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: PageProps) {
     const { slug } = await params
-    const post = await getPost(slug)
+    // We do NOT fetch post here anymore. We let the client component fetch it.
+    // This allows the page to be static shell, but content to be dynamic/fresh.
 
-    if (!post) {
-        notFound()
-    }
-
-    return <PageContent post={post} />
+    return <PageContent slug={slug} />
 }
 
