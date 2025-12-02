@@ -35,7 +35,7 @@ export function TableOfContents() {
                 id: elem.id,
                 text: elem.textContent || "",
                 level: Number(elem.tagName.substring(1)),
-            })).filter(item => item.id && item.text)
+            })).filter(item => item.id && item.text && item.text !== "Command Palette")
 
             if (newItems.length > 0) {
                 setHeadings(prev => {

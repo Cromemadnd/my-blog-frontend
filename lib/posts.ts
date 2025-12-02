@@ -146,6 +146,30 @@ export async function getAllPosts(): Promise<{ slug: string; metadata: PostMetad
     return posts;
 }
 
+export async function getAllPaths(): Promise<string[]> {
+    const indexData = await getIndexData();
+    const paths: string[] = [];
+
+    function traverse(current: any, pathSegments: string[]) {
+        for (const key in current) {
+            if (key === 'index') continue;
+
+            const value = current[key];
+            const currentPath = [...pathSegments, key];
+
+            paths.push(currentPath.join('/'));
+
+            const isPost = value && value.title && value.date;
+            if (!isPost && value && typeof value === 'object') {
+                traverse(value, currentPath);
+            }
+        }
+    }
+
+    traverse(indexData, []);
+    return paths;
+}
+
 export async function getSidebarData() {
     return await getIndexData();
 }

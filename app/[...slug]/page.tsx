@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/posts"
+import { getAllPaths } from "@/lib/posts"
 import { PageContent } from "@/components/page-content"
 
 interface PageProps {
@@ -8,9 +8,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    const posts = await getAllPosts()
-    return posts.map((post) => ({
-        slug: post.slug.split('/'),
+    const paths = await getAllPaths()
+    return paths.map((path) => ({
+        slug: path.split('/'),
     }))
 }
 

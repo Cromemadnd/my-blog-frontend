@@ -1,6 +1,7 @@
 import { getSidebarData } from "@/lib/posts"
 import { SidebarNav } from "./sidebar-nav"
 import Link from "next/link"
+import Image from "next/image"
 
 export async function LeftSidebarContent() {
     const sidebarData = await getSidebarData()
@@ -8,10 +9,14 @@ export async function LeftSidebarContent() {
     return (
         <div className="flex flex-col h-full space-y-2">
             <div className="mb-6 w-120 flex items-center space-x-3 px-2">
-                <Link href="/" className="flex items-center space-x-2">
-                    <div className="h-10 w-10 bg-foreground text-background flex items-center justify-center font-bold text-xl rounded-none transform -skew-x-12">
-                        <span className="transform skew-x-12">B</span>
-                    </div>
+                <Link href="/" className="flex items-center space-x-2 w-full pl-8">
+                    <Image
+                        src="/favicon.jpg"
+                        alt="Logo"
+                        width={40}
+                        height={40}
+                        className="rounded-lg"
+                    />
                     <span className="font-bold text-2xl tracking-tighter uppercase">Cromemadnd&apos;s Blog</span>
                 </Link>
             </div>
