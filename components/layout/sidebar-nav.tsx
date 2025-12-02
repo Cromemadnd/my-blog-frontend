@@ -70,15 +70,15 @@ export function SidebarNav({ items }: SidebarNavProps) {
                                 <Link
                                     href={`/${item.path}`}
                                     className={cn(
-                                        "group flex items-center w-full rounded-md border border-transparent px-2 py-1 hover:underline",
+                                        "group flex items-center w-full lg:w-[var(--nav-width)] rounded-md border border-transparent px-2 py-1 hover:underline",
                                         pathname === `/${item.path}`
                                             ? "font-medium text-foreground"
                                             : "text-muted-foreground"
                                     )}
                                     style={{
                                         paddingLeft: `${item.level * 16 + 8}px`,
-                                        width: `${480 - index * 20 - item.level * 16}px`
-                                    }}
+                                        "--nav-width": `calc(20dvw - ${index * 2}dvw - ${item.level}dvw)`
+                                    } as React.CSSProperties}
                                 >
                                     {item.title}
                                 </Link>

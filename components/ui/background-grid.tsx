@@ -109,16 +109,16 @@ export function BackgroundGrid() {
                     // 提取背景色逻辑：如果在鼠标附近则计算动态透明度，否则使用棋盘格纹理
                     let bgClass = ""
                     if (Math.floor(mousePosGrid.x) === x && Math.floor(mousePosGrid.y) === y) {
-                        bgClass = "bg-foreground/20 dark:bg-foreground/50"
+                        bgClass = "bg-foreground/20 dark:bg-foreground/40"
                     } else if (Math.sqrt((mousePosGrid.x - x - 0.5) ** 2 + (mousePosGrid.y - y - 0.5) ** 2) < 1.7) {
                         if ((x + y) % 2 === 0) {
-                            bgClass = "bg-foreground/10 dark:bg-foreground/25"
+                            bgClass = "bg-foreground/15 dark:bg-foreground/30"
                         } else {
-                            bgClass = "bg-foreground/8 dark:bg-foreground/20"
+                            bgClass = "bg-foreground/10 dark:bg-foreground/20"
                         }
                     }
                     else if ((x + y) % 2 === 0) {
-                        bgClass = "bg-foreground/3 dark:bg-foreground/8"
+                        bgClass = "bg-foreground/5 dark:bg-foreground/10"
                     } else {
                         bgClass = "bg-transparent"
                     }
@@ -126,7 +126,7 @@ export function BackgroundGrid() {
                     return (
                         <div
                             key={`${x}-${y}`}
-                            className={`aspect-square border border-foreground/5 dark:border-foreground/15 transition-colors duration-100 ${bgClass}`}
+                            className={`aspect-square transition-colors duration-100 ${bgClass} blur-sm`}
                             style={style}
                         />
                     )

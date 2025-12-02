@@ -8,7 +8,7 @@ export async function LeftSidebarContent() {
 
     return (
         <div className="flex flex-col h-full space-y-2">
-            <div className="mb-6 w-120 flex items-center space-x-3 px-2">
+            <div className="mb-6 w-full flex items-center space-x-3 px-2">
                 <Link href="/" className="flex items-center space-x-2 w-full pl-8">
                     <Image
                         src="/favicon.jpg"
@@ -25,7 +25,7 @@ export async function LeftSidebarContent() {
                 <SidebarNav items={sidebarData} />
             </div>
 
-            <div className="text-s text-muted-foreground mt-auto pt-4 border-t border-sidebar-border/50 w-60">
+            <div className="text-s text-muted-foreground mt-auto pt-4 border-t border-sidebar-border/50 w-full">
                 &copy; 2025 Cromemadnd Lancity
             </div>
         </div>

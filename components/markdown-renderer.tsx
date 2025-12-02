@@ -46,9 +46,9 @@ function ScrollAnimated({ as, className, children, disabled, ...props }: any) {
     }
 
     const variants = {
-        "hidden-bottom": { x: "-50%", opacity: 0 },
+        "hidden-bottom": { x: "-25%", opacity: 0 },
         "visible": { x: 0, opacity: 1 },
-        "hidden-top": { x: "50%", opacity: 0 }
+        "hidden-top": { x: "25%", opacity: 0 }
     }
 
     const Component = motion[as as keyof typeof motion] as any
@@ -58,7 +58,7 @@ function ScrollAnimated({ as, className, children, disabled, ...props }: any) {
             ref={ref as any}
             animate={state}
             variants={variants}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className={className}
             {...props}
         >
