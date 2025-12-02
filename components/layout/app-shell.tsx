@@ -82,14 +82,14 @@ export function AppShell({ children, leftSidebar, rightSidebar, posts = [] }: Ap
 
             {/* Left Sidebar (Fixed Trapezoid) */}
             <aside className={cn(
-                "fixed top-0 left-0 bottom-0 lg:w-[10dvw] z-60 pointer-events-none transition-transform duration-300",
-                isSidebarOpen ? "block w-72" : "-translate-x-[120dvw] md:block"
+                "fixed top-0 left-0 bottom-0 md:w-[10dvw] z-60 pointer-events-none transition-transform duration-300",
+                isSidebarOpen ? "block w-72" : "-translate-x-[120dvw] w-72 lg:translate-x-0 lg:block"
             )}>
                 {/* Background Shape */}
                 <div className="absolute top-0 bottom-0 right-0 w-[300%] bg-sidebar/95 md:bg-sidebar/75 border-r border-sidebar-border pointer-events-auto origin-bottom-right -skew-x-12">
                 </div>
                 {/* Content */}
-                <div className="relative h-full flex flex-col px-6 py-8 pt-8 z-10 pointer-events-auto w-full">
+                <div className="relative h-full flex flex-col px-6 py-8 pt-8 z-10 pointer-events-auto w-full origin-bottom-right -translate-x-6">
                     {leftSidebar}
                 </div>
             </aside>

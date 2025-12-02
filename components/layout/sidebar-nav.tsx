@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { ChevronRight, ChevronDown } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import { useState, useMemo } from "react"
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
@@ -61,7 +61,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
     }, [items, collapsed])
 
     return (
-        <ScrollArea className="h-full py-6 pr-6 lg:py-8 w-120">
+        <ScrollArea className="h-full pt-6 pl-6 lg:py-8 w-full lg:w-[20dvw] pointer-events-auto">
             <div className="space-y-1">
                 {visibleItems.map((item, index) => {
                     if (item.type === 'post') {
@@ -77,7 +77,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
                                     )}
                                     style={{
                                         paddingLeft: `${item.level * 16 + 8}px`,
-                                        "--nav-width": `calc(20dvw - ${index * 2}dvw - ${item.level}dvw)`
+                                        "--nav-width": `calc(18dvw - ${index}dvw - ${item.level}dvw)`
                                     } as React.CSSProperties}
                                 >
                                     {item.title}

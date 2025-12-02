@@ -53,7 +53,7 @@ export function Search({ posts, className }: SearchProps) {
                 <span className="sr-only">Search</span>
             </Button>
             <CommandDialog open={open} onOpenChange={setOpen} className="-skew-x-12 px-12 py-4">
-                <CommandInput placeholder="Type a command or search..." />
+                <CommandInput placeholder="Type a command or search..." className="skew-x-12" />
                 <CommandList>
                     <CommandEmpty>No results found.</CommandEmpty>
                     <CommandGroup heading="Posts">
