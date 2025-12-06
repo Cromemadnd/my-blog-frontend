@@ -1,5 +1,22 @@
 {
     "name": "my-blog-frontend",
-    "type": "javascript",
-    "compatibility_date": "2025-12-06"
+    "compatibility_date": "2025-12-06",
+    "env": {
+        "production": {
+            "routes": [
+                {
+                    "pattern": "cromemadnd.cn/*",
+                    "zone_id": "66ca0154272fae66de971c71b3a213a3"
+                },
+                {
+                    "pattern": "www.cromemadnd.cn/*",
+                    "zone_id": "66ca0154272fae66de971c71b3a213a3"
+                },
+                {
+                    "pattern": "blog.cromemadnd.cn/*",
+                    "zone_id": "66ca0154272fae66de971c71b3a213a3"
+                }
+            ]
+        }
+    }
 }
