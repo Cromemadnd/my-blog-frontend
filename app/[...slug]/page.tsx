@@ -8,10 +8,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    const paths = await getAllPaths()
-    return paths.map((path) => ({
-        slug: path.split('/'),
-    }))
+    return [];
 }
 
 export default async function Page({ params }: PageProps) {
@@ -22,3 +19,4 @@ export default async function Page({ params }: PageProps) {
     return <PageContent slug={slug} />
 }
 
+export const revalidate = 300; // Revalidate every 5 minutes
